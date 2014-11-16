@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.validate.min
+//= require additional-methods.min
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
