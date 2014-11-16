@@ -1,7 +1,7 @@
 <h1>Job Posting Form</h1>
 <form id="form">
 	<label for="Entry_Level">Click the Entry Level *</label> <br />
-	<input type="radio" name="options" value="1">Internship</input>
+	<input type="radio" name="options" value="1" checked="true">Internship</input>
 	<input type="radio" name="options" value="1">Full Time</input><br /><br />
 	<table>
 		<tr>
@@ -17,7 +17,7 @@
 				<label for="employer">Company *</label>
 			</td>
 			<td>
-				<input type="text" maxLength="50" size="30">
+				<input type="text" name="company" maxLength="50" size="30">
 			</td>
 		<tr>
 			<td>
@@ -31,19 +31,19 @@
 				<label for="jobCity">City *</label>
 			</td>
 			<td>
-				<input type="text" maxLength="20" size="15">
+				<input type="text" name="city" maxLength="20" size="15">
 			</td>
 			<td>
 				<label for="jobState">State *</label>
 			</td>
 			<td>
-				<input type="text" maxLength="20" size="15">
+				<input type="text" name="state" maxLength="20" size="15">
 			</td>
 			<td>
 				<label for="jobZip">Zip *</label>
 			</td>
 			<td>
-				<input type="text" maxLength="5" size="10">
+				<input type="text" name="zip" maxLength="5" size="10">
 			</td>
 		</tr>
 		<tr>
@@ -70,7 +70,7 @@
 				<label for="jobSalary">Salary *</label>
 			</td>
 			<td>
-				<input type="text" maxLength="50" size="30">
+				<input type="text" name="salary" maxLength="50" size="30">
 			</td>
 		</tr>
 		<tr>
@@ -78,7 +78,7 @@
 				<label for="hoursPerWeek">Hours Per Week *</label>
 			</td>
 			<td>
-				<input type="text" maxLength="50" size="30">
+				<input type="text" name="hours"maxLength="50" size="30">
 			</td>
 		</tr>
 	<table>
@@ -92,7 +92,7 @@
 				<label for="jobEducation">Education *</label>
 			</td>
 			<td>
-				<textarea rows="4" cols="50"></textarea>
+				<textarea rows="4" name="education" cols="50"></textarea>
 			</td>
 		</tr>	
 	</table>
@@ -105,7 +105,7 @@
 				<label for="jobDescriptions">Job Description *</label>
 			</td>
 			<td>
-				<textarea rows="4" cols="50"></textarea>
+				<textarea rows="4" name="jobDescription" cols="50"></textarea>
 			</td>
 		</tr>
 	</table>
@@ -155,7 +155,7 @@
 				<label for="profile">Company Profile *</label>
 			</td>
 			<td>
-				<textarea rows="4" cols="50"></textarea>
+				<textarea rows="4" name="companyProfile" cols="50"></textarea>
 			</td>
 		</tr>
 	</table>
