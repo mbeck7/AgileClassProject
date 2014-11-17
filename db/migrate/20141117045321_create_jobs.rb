@@ -1,20 +1,16 @@
 class CreateJobs < ActiveRecord::Migration
   def change
     create_table :jobs do |t|
+      t.string :company_name
       t.string :title
+      t.string :job_type
+      t.text :job_description
       t.integer :hours_per_week
-      t.boolean :is_internship
-      t.boolean :is_entry_level
-      t.text :experience
-      t.text :description
-      t.boolean :full_time
-      t.boolean :part_time
-      t.text :how_to_apply
       t.float :pay_min
       t.float :pay_max
-      t.float :pay_exact
       t.text :pay_comment
-      t.string :company_name
+      t.text :applicant_experience
+      t.text :how_to_apply
 
       t.timestamps
     end
