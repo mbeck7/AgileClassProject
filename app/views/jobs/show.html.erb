@@ -1,1 +1,53 @@
-<h1>Show</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @job.company_name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+
+<p>
+  <strong>Job type:</strong>
+  <%= @job.job_type %>
+</p>
+
+<p>
+  <strong>Job description:</strong>
+  <%= @job.job_description %>
+</p>
+
+<p>
+  <strong>Hours per week:</strong>
+  <%= @job.hours_per_week %>
+</p>
+
+<p>
+  <strong>Pay min:</strong>
+  <%= @job.pay_min %>
+</p>
+
+<p>
+  <strong>Pay max:</strong>
+  <%= @job.pay_max %>
+</p>
+
+<p>
+  <strong>Pay comment:</strong>
+  <%= @job.pay_comment %>
+</p>
+
+<p>
+  <strong>Applicant experience:</strong>
+  <%= @job.applicant_experience %>
+</p>
+
+<p>
+  <strong>How to apply:</strong>
+  <%= @job.how_to_apply %>
+</p>
+
+<%= link_to 'Back to jobs', jobs_path %>

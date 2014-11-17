@@ -1,3 +1,12 @@
-<h1>Index</h1>
+<h1>Jobs</h1>
+<hr>
 
+<% @jobs.each do | job | %>
+    <div>
+      <%= link_to "Company: #{job.company_name} -  Job Title: #{job.title}  -  Job Type: #{job.job_type}", job %>
+    </div>
+<% end %>
 
+<br>
+
+<%= link_to 'New Job', new_job_path %>

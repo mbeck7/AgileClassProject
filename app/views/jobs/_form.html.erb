@@ -1,1 +1,60 @@
-#TODO - add form
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_name %><br>
+    <%= f.text_field :company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :job_type %><br>
+    <%= f.select :job_type, [ ['Entry Level - Salary', 'Entry Level - Salary'], 
+                                            ['Entry Level - Hourly', 'Entry Level - Hourly'], 
+                                            ['Internship - Salary', 'Internship - Salary'], 
+                                            ['Internship - Hourly', 'Internship - Hourly']] %>
+  </div>
+  <div class="field">
+    <%= f.label :job_description %><br>
+    <%= f.text_area :job_description %>
+  </div>
+  <div class="field">
+    <%= f.label :hours_per_week %><br>
+    <%= f.number_field :hours_per_week %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_min %><br>
+    <%= f.text_field :pay_min %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_max %><br>
+    <%= f.text_field :pay_max %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_comment %><br>
+    <%= f.text_area :pay_comment %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant_experience %><br>
+    <%= f.text_area :applicant_experience %>
+  </div>
+  <div class="field">
+    <%= f.label :how_to_apply %><br>
+    <%= f.text_area :how_to_apply %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
