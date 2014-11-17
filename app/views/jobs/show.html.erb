@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+
+<p>
+  <strong>Hours per week:</strong>
+  <%= @job.hours_per_week %>
+</p>
+
+<p>
+  <strong>Is internship:</strong>
+  <%= @job.is_internship %>
+</p>
+
+<p>
+  <strong>Is entry level:</strong>
+  <%= @job.is_entry_level %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @job.experience %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @job.description %>
+</p>
+
+<p>
+  <strong>Full time:</strong>
+  <%= @job.full_time %>
+</p>
+
+<p>
+  <strong>Part time:</strong>
+  <%= @job.part_time %>
+</p>
+
+<p>
+  <strong>How to apply:</strong>
+  <%= @job.how_to_apply %>
+</p>
+
+<p>
+  <strong>Pay min:</strong>
+  <%= @job.pay_min %>
+</p>
+
+<p>
+  <strong>Pay max:</strong>
+  <%= @job.pay_max %>
+</p>
+
+<p>
+  <strong>Pay exact:</strong>
+  <%= @job.pay_exact %>
+</p>
+
+<p>
+  <strong>Pay comment:</strong>
+  <%= @job.pay_comment %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @job.company_name %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
