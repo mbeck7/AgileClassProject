@@ -27,12 +27,12 @@
 
 <p>
   <strong>Pay min:</strong>
-  <%= @job.pay_min %>
+  <%=number_to_currency(@job.pay_min, :unit => "$", :separator => ".") %>    
 </p>
 
 <p>
   <strong>Pay max:</strong>
-  <%= @job.pay_max %>
+  <%=number_to_currency(@job.pay_max, :unit => "$", :separator => ".") %>
 </p>
 
 <p>
