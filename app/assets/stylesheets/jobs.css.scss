@@ -1,3 +1,50 @@
-// Place all the styles related to the Jobs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#job_company_name {
+    border-width: thin;
+    border-color: black;
+  }
+
+  #job_title {
+    border-width: thin;
+    border-color: black;
+  }
+
+  #job_job_type {
+    border-width: thin;
+    border-color: black;
+  }
+
+  #job_job_description {
+    border-color: black;
+  }
+
+  #job_hours_per_week {
+    border-width: thin;
+    border-color: black;
+  }
+
+  #job_pay_min {
+    border-width: thin;
+    border-color: black;
+  }
+
+  #job_pay_max {
+    border-width: thin;
+    border-color: black;
+  }
+
+  #job_pay_comment {
+    border-color: black;
+  }
+
+  #job_applicant_experience {
+    border-color: black;
+  }
+
+  #job_how_to_apply {
+    border-color: black;
+  }
+
+  .actions > input:nth-child(1) {
+    border-width: thin;
+    border-color: black;
+  }
