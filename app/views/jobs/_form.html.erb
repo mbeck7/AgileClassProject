@@ -25,6 +25,11 @@
                                             ['Entry Level - Hourly', 'Entry Level - Hourly'], 
                                             ['Internship - Salary', 'Internship - Salary'], 
                                             ['Internship - Hourly', 'Internship - Hourly']] %>
+  <div class="field">
+    <%= f.label :job_location %><br>
+    <%= f.select :job_location, [ ['Local'], 
+                                  ['Local/Remote'], 
+                                  ['Remote']] %>
   </div>
   <div class="field">
     <%= f.label :job_description %><br>
