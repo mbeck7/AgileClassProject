@@ -11,5 +11,13 @@
       </div>
   <% end %>
 
+<<<<<<< HEAD
 <br>
 <%= link_to 'New Job', new_job_path %>
+=======
+<%= link_to 'New Job', new_job_path %>
+
+<% if admin_signed_in? %>
+  <p>Only admins see this element</p>
+<%end%>
+>>>>>>> 71468180e9edd17b2a327794da99e24bf3b337bd

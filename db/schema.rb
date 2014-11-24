@@ -11,12 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117045321) do
+ActiveRecord::Schema.define(version: 20141124025720) do
+
+  create_table "admins", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "job_keywords", force: true do |t|
+    t.integer  "job_id"
+    t.integer  "keyword_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "jobs", force: true do |t|
     t.string   "company_name"
     t.string   "title"
     t.string   "job_type"
+    t.string   "job_location"
     t.text     "job_description"
     t.integer  "hours_per_week"
     t.float    "pay_min"
@@ -24,6 +50,14 @@ ActiveRecord::Schema.define(version: 20141117045321) do
     t.text     "pay_comment"
     t.text     "applicant_experience"
     t.text     "how_to_apply"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "job_keyword_id"
+  end
+
+  create_table "keywords", force: true do |t|
+    t.string   "keyword"
+    t.integer  "job_keywords_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
