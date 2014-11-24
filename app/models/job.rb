@@ -8,4 +8,6 @@ class Job < ActiveRecord::Base
   validates_presence_of :pay_min
   validates_presence_of :applicant_experience
   validates_presence_of :how_to_apply
+
+  has_many :job_keywords
 end

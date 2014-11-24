@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121024441) do
+ActiveRecord::Schema.define(version: 20141124025720) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20141121024441) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "job_keywords", force: true do |t|
+    t.integer  "job_id"
+    t.integer  "keyword_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "jobs", force: true do |t|
     t.string   "company_name"
     t.string   "title"
@@ -43,6 +50,14 @@ ActiveRecord::Schema.define(version: 20141121024441) do
     t.text     "pay_comment"
     t.text     "applicant_experience"
     t.text     "how_to_apply"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "job_keyword_id"
+  end
+
+  create_table "keywords", force: true do |t|
+    t.string   "keyword"
+    t.integer  "job_keywords_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
