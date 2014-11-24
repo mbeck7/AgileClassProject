@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20141121024441) do
     t.string   "company_name"
     t.string   "title"
     t.string   "job_type"
+    t.string   "job_location"
     t.text     "job_description"
     t.integer  "hours_per_week"
     t.float    "pay_min"
