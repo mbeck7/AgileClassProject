@@ -10,3 +10,7 @@
 <br>
 
 <%= link_to 'New Job', new_job_path %>
+
+<% if admin_signed_in? %>
+  <p>Only admins see this element</p>
+<%end%>

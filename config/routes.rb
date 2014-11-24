@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  resources :jobs
   get 'jobs/index'
 
   get 'jobs/show'
 
   get 'jobs/new'
 
-  resources :jobs
   root 'jobs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
