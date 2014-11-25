@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Agile Class Project is a project for agile class.
 
-Things you may want to cover:
+We worked very hard to come up with a good name.
 
-* Ruby version
+Getting up and running in the terminal:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+git clone https://github.com/mbeck7/AgileClassProject.git
+cd AgileClassProject/
+bundle exec rake sunspot:solr:start
+rake db:setup
+rails s
