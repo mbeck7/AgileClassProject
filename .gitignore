@@ -14,5 +14,16 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+<<<<<<< HEAD
 .DS_Store
 */.DS_Store
+=======
+
+#Ignore all the solr files
+solr/data
+solr/test
+solr/development
+solr/default/data
+/log/*.log.lck
+solr/pids
+>>>>>>> 9b16542d4d870a52b01816655305b4fb26eb9c74
