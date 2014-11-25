@@ -1,19 +1,36 @@
-<h1>Jobs</h1>
+<% if admin_signed_in? %>
+  
+  <h4>Unapproved Jobs:</h4>
+    
+    <% @jobs.each do | job | %>
+      <% if job.approved == false %>
+        <div>
+          <p><%= "Company: #{job.company_name} -  Job Title: #{job.title}  -  Job Type: #{job.job_type}" %></p>
+          <p><%= link_to 'View and Approve', job %></p>
+        </div>
+      <%end%>
+    <%end%>
+
+    <br> <hr> <br>
+<%end%>
 
 <%= form_tag jobs_path, :method => 'get' do %>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag "Search", :name => nil %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
 <% end %>
 
-  <% @jobs.each do | job | %>
-      <div>
-        <%= link_to "Company: #{job.company_name} -  Job Title: #{job.title}  -  Job Type: #{job.job_type}", job %>
-      </div>
+<h1>Jobs</h1>
+
+<% @jobs.each do | job | %>
+  <% if job.approved == true %>
+    <div>
+      <%= link_to "Company: #{job.company_name} -  Job Title: #{job.title}  -  Job Type: #{job.job_type}", job %>
+    </div>
   <% end %>
+<% end %>
 
 <br>
 <%= link_to 'New Job', new_job_path %>
 
-<% if admin_signed_in? %>
-  <p>Only admins see this element</p>
-<%end%>
+
+

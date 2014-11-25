@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :admins
   resources :jobs
+  
   get 'jobs/index'
-
   get 'jobs/show'
-
   get 'jobs/new'
+  get 'jobs/edit'
 
   root 'jobs#index'
 

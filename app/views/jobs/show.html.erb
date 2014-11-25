@@ -1,3 +1,7 @@
+<% if admin_signed_in? %>
+  <p><%= link_to 'Approve Job', edit_job_path(@job) %></p>
+<%end%>
+
 <p>
   <strong>Company name:</strong>
   <%= @job.company_name %>

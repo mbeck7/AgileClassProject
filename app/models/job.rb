@@ -17,5 +17,5 @@ class Job < ActiveRecord::Base
       #record = find_by(company_name: search)
       #[record]
   #end
-  has_many :job_keywords
+
 end

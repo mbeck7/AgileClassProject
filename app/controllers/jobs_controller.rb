@@ -2,11 +2,18 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show]
 
   def index
-    @search = Job.search do
+    @jobs = Job.order "created_at desc"
+
+    search = Job.search do
       fulltext params[:search]
     end
-    @jobs = @search.results
-    #@jobs = Job.order "created_at desc"
+
+    search_results = search.results
+
+    if search_results
+      unused = @jobs  - search_results
+      @jobs = @jobs - unused
+    end
   end
 
   def show
@@ -31,12 +38,18 @@ class JobsController < ApplicationController
     end
   end
 
+  def edit
+    @job = Job.find(params[:id])
+    @job.update(approved: true)
+  end
+
   private
     def set_job
       @job = Job.find(params[:id])
     end
 
     def job_params
-      params.require(:job).permit(:company_name, :title, :job_type, :job_location, :job_description, :hours_per_week, :pay_min, :pay_max, :pay_comment, :applicant_experience, :how_to_apply)
+      params.require(:job).permit(:company_name, :title, :job_type, :job_location, :job_description, :hours_per_week,
+                                                   :pay_min, :pay_max, :pay_comment, :applicant_experience, :how_to_apply)
     end
 end
