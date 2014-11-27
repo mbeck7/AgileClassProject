@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :company_reps
   devise_for :admins
   resources :jobs
   
