@@ -12,12 +12,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :how_to_apply
 
   searchable do
-    text :title
+    text :company_name, :title, :job_type, :job_location, :job_description, :applicant_experience 
   end
-
-  #def self.search(search)
-      #record = find_by(company_name: search)
-      #[record]
-  #end
 
 end

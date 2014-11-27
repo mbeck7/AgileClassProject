@@ -1,4 +1,17 @@
 <%= form_tag jobs_path, :method => 'get' do %>
+  <%= label_tag(:q, "Search for Keywords") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<%= form_tag jobs_path, :method => 'get' do %>
+  <%= label_tag(:q, "Search by Company Name") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<%= form_tag jobs_path, :method => 'get' do %>
+  <%= label_tag(:q, "Search by Job Title") %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
