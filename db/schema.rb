@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127152904) do
+ActiveRecord::Schema.define(version: 20141127210455) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,19 @@ ActiveRecord::Schema.define(version: 20141127152904) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "state"
+    t.string   "city"
+    t.string   "zip_code"
+    t.integer  "company_rep_id"
+    t.boolean  "approved",       default: false
+    t.boolean  "rejected",       default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "company_reps", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -50,7 +63,6 @@ ActiveRecord::Schema.define(version: 20141127152904) do
   add_index "company_reps", ["reset_password_token"], name: "index_company_reps_on_reset_password_token", unique: true
 
   create_table "jobs", force: true do |t|
-    t.string   "company_name"
     t.string   "title"
     t.string   "job_type"
     t.string   "job_location"
@@ -64,6 +76,8 @@ ActiveRecord::Schema.define(version: 20141127152904) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "approved",             default: false
+    t.integer  "company_id"
+    t.boolean  "rejected",             default: false
   end
 
 end

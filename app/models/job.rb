@@ -1,5 +1,7 @@
 class Job < ActiveRecord::Base
-  validates_presence_of :company_name
+  belongs_to :company
+  
+  validates_presence_of :company_id
   validates_presence_of :title
   validates_presence_of :job_type
   validates_presence_of :job_location
@@ -10,7 +12,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :how_to_apply
 
   searchable do
-    text :title, :company_name
+    text :title
   end
 
   #def self.search(search)

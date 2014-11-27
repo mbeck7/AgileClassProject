@@ -4,7 +4,27 @@
 
 <p>
   <strong>Company name:</strong>
-  <%= @job.company_name %>
+  <%= @company.name %>
+</p>
+
+<p>
+  <%= @company.address %>
+  <%= @job.company.city %>, <%= @job.company.state %> <%= @job.company.zip_code %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @company.state %>
+</p>
+
+<p>
+  <strong>Company address:</strong>
+  <%= @company.city %>
+</p>
+
+<p>
+  <strong>Company address:</strong>
+  <%= @company.zip_code %>
 </p>
 
 <p>

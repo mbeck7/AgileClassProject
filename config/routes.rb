@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
+
+
   devise_for :company_reps
   devise_for :admins
   resources :jobs
-  
-  get 'jobs/index'
-  get 'jobs/show'
-  get 'jobs/new'
-  get 'jobs/edit'
+  resources :companies
+  resources :admins
 
   root 'jobs#index'
 

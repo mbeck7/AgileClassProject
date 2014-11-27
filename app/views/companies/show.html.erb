@@ -1,0 +1,48 @@
+<% if admin_signed_in? %>
+  <p><%= link_to 'Approve Company', edit_company_path(@company) %></p>
+
+  <p><%= link_to 'Reject Company', edit_company_path(@company) %></p>
+<%end%>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @company.address %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @company.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @company.city %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @company.zip_code %>
+</p>
+
+<p>
+  <strong>Company rep:</strong>
+  <%= @company.company_rep_id %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @company.approved %>
+</p>
+
+<p>
+  <strong>Rejected:</strong>
+  <%= @company.rejected %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
