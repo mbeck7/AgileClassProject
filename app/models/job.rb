@@ -12,7 +12,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :how_to_apply
 
   searchable do
-    text :company_name, :title, :job_type, :job_location, :job_description, :applicant_experience 
+    text :company_id, :title, :job_type, :job_location, :job_description, :applicant_experience 
   end
 
 end
