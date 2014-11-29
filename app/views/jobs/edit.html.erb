@@ -1,6 +1,16 @@
-<h1>Edit company</h1>
+<% if admin_signed_in? %>
+  <p>
+    <%= link_to 'Back to Admin Page', admins_path %>
+  </p>
+<%end%>
+  
+<p>
+  <%= link_to 'Back to jobs', jobs_path %>
+</p>
+
+<h2>Edit company</h2>
 
 <%= render 'form' %>
+
 <br>
 
-<%= link_to 'Back to jobs', jobs_path %>
