@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show]
+  before_action :set_job, only: [:show, :edit, :update]
+  respond_to :html, :json
 
   def index
     @jobs = Job.order "created_at desc"
@@ -40,8 +41,18 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
-    @job.update(approved: true)
+  end
+
+  def update
+    respond_to do |format|
+      if @job.update(job_params)
+        format.html { redirect_to @job, notice: 'Successfully updated job.' }
+        format.json { render :show, status: :ok, location: @job }
+      else
+        format.html { render :edit }
+        format.json { render json: @job.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
@@ -51,6 +62,7 @@ class JobsController < ApplicationController
 
     def job_params
       params.require(:job).permit(:company_id, :title, :job_type, :job_location, :job_description, :hours_per_week,
-                                                   :pay_min, :pay_max, :pay_comment, :applicant_experience, :how_to_apply)
+                                                   :pay_min, :pay_max, :pay_comment, :applicant_experience, :how_to_apply,
+                                                   :approved, :rejected)
     end
 end

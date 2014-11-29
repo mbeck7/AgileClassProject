@@ -1,30 +1,9 @@
-<% if admin_signed_in? %>
-  <p><%= link_to 'Approve Job', edit_job_path(@job) %></p>
-<%end%>
-
 <p>
   <strong>Company name:</strong>
   <%= @company.name %>
-</p>
-
-<p>
+  <br>
   <%= @company.address %>
-  <%= @job.company.city %>, <%= @job.company.state %> <%= @job.company.zip_code %>
-</p>
-
-<p>
-  <strong>Company name:</strong>
-  <%= @company.state %>
-</p>
-
-<p>
-  <strong>Company address:</strong>
-  <%= @company.city %>
-</p>
-
-<p>
-  <strong>Company address:</strong>
-  <%= @company.zip_code %>
+  <%= @company.city %>, <%= @company.state %> <%= @company.zip_code %>
 </p>
 
 <p>

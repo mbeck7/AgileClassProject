@@ -1,11 +1,14 @@
 <br><hr><br>
 
 <h2>Unapproved Jobs</h2>
-<% if @unapproved_jobs %>
-  <% @unapproved_jobs.each do | job | %>
+<% @unapproved_jobs.each do | job | %>
+  <% if job %>
     <div>
       <%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}", job %>
+      <br>
+      <%= link_to 'Edit Job', edit_job_path(job) %>  |  
     </div>
+    <br><br>
   <% end %>
 <% end %>
 
@@ -14,9 +17,11 @@
 <h2>Unapproved companies</h2>
 <% if @unapproved_companies %>
   <% @unapproved_companies.each do | company | %>
-    <div>
-      <%= link_to "Company: #{company.name}", company %>
-    </div>
+    <% if company %>
+      <div>
+        <%= link_to "Company: #{company.name}", company %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
 
