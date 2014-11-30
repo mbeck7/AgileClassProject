@@ -1,11 +1,10 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
-    @companies = Company.all
-    respond_with(@companies)
+    @companies = Company.approved_job_postings
   end
 
   def show
@@ -18,24 +17,32 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    @company = Company.find(params[:id])
-    @company.update(approved: true)
   end
 
   def create
     @company = Company.new(company_params)
-    @company.save
-    respond_with(@company)
+
+    respond_to do |format|
+      if @company.save
+        format.html { redirect_to @company, notice: 'Company was successfully created.' }
+        format.json { render :show, status: :created, location: @job }
+      else
+        format.html { render :new }
+        format.json { render json: @company.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
-    @company.update(company_params)
-    respond_with(@company)
-  end
-
-  def destroy
-    @company.destroy
-    respond_with(@company)
+    respond_to do |format|
+      if @company.update(company_params)
+        format.html { redirect_to @company, notice: 'Successfully updated company.' }
+        format.json { render :show, status: :ok, location: @company }
+      else
+        format.html { render :edit }
+        format.json { render json: @company.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private

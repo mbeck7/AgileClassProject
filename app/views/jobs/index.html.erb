@@ -19,7 +19,7 @@
 <h1>Jobs</h1>
 
 <% @jobs.each do | job | %>
-  <% if job.approved == true %>
+  <% if(job.approved == true && job.rejected == false) %>
     <div>
       <%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}", job %>
     </div>

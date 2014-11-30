@@ -1,5 +1,13 @@
-<h1>Approved Company</h1>
-<p><%= "Company: #{@company.name}" %></p>
-<br>
+<p class="navbar-text pull-right">
+  <%= link_to 'Admin Page', admins_path %>
+  <% if admin_signed_in? %>
+         -  |  -    <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+         -  |  -    Logged in as <strong><%= current_admin.email %></strong>.
+  <% end %>
+</p>
 
-<%= link_to 'Back to company', companies_path %>
+<h2>Edit Company</h2>
+
+<%= render 'form' %>
+
+<br>

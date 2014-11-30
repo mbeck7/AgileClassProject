@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   devise_for :admins
   resources :jobs
   resources :companies
+  resources :admins
+  resources :company_reps
+  resources :home
 
   root 'home#index'
 

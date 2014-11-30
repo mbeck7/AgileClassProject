@@ -1,12 +1,26 @@
-<br><hr><br>
+<p class="navbar-text pull-right">
+  <%= link_to 'Home', root_path %>
+  <% if admin_signed_in? %>
+         -  |  -    <%= link_to "Admin Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+         -  |  -    Logged in as <strong><%= current_admin.email %></strong>.
+  <% end %>
+  </p>
+  <br><hr><br>
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
 <h2>Unapproved Jobs</h2>
 <% @unapproved_jobs.each do | job | %>
   <% if job %>
     <div>
-      <%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}", job %>
+      <%= link_to "Company: #{Company.find(job.company_id).name}    - | -   Job Title: #{job.title}    - | -   Job Type: #{job.job_type}", job %>
       <br>
-      <%= link_to 'Edit Job', edit_job_path(job) %>  |  
+      <%= link_to 'Edit Job', edit_job_path(job) %>
     </div>
     <br><br>
   <% end %>
@@ -20,6 +34,8 @@
     <% if company %>
       <div>
         <%= link_to "Company: #{company.name}", company %>
+        <br>
+        <%= link_to 'Edit Company', edit_company_path(company) %>
       </div>
     <% end %>
   <% end %>

@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+<% if admin_signed_in? %>
+  <div class="field">
+    <%= f.label :approved %><br>
+    <%= f.check_box :approved %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rejected %><br>
+    <%= f.check_box :rejected %>
+  </div>
+<%end%>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -34,14 +46,6 @@
   <div class="field">
     <%= f.label :company_rep_id %><br>
     <%= f.number_field :company_rep_id %>
-  </div>
-  <div class="field">
-    <%= f.label :approved %><br>
-    <%= f.check_box :approved %>
-  </div>
-  <div class="field">
-    <%= f.label :rejected %><br>
-    <%= f.check_box :rejected %>
   </div>
   <div class="actions">
     <%= f.submit %>

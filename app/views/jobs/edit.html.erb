@@ -1,16 +1,13 @@
-<% if admin_signed_in? %>
-  <p>
-    <%= link_to 'Back to Admin Page', admins_path %>
-  </p>
-<%end%>
-  
-<p>
-  <%= link_to 'Back to jobs', jobs_path %>
+<p class="navbar-text pull-right">
+  <%= link_to 'Admin Page', admins_path %>
+  <% if admin_signed_in? %>
+         -  |  -    <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+         -  |  -    Logged in as <strong><%= current_admin.email %></strong>.
+  <% end %>
 </p>
 
-<h2>Edit company</h2>
+<h2>Edit Job</h2>
 
 <%= render 'form' %>
 
 <br>
-
