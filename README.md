@@ -24,7 +24,7 @@ Get rid of solr stuff the git ignore couldn't handle:
 
 $ rm -rf config/sunspot.yml
 
-$ rm -rf config/solr
+$ rm -rf solr
 
 Set up solr:
 
@@ -61,7 +61,7 @@ Get rid of solr stuff the git ignore couldn't handle:
 
 $ rm -rf config/sunspot.yml
 
-$ rm -rf config/solr
+$ rm -rf solr
 
 Set up solr:
 

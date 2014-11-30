@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-
 
   get 'home/index'
 
-  get 'home/about'
-
-=======
->>>>>>> a2255a3abdae2f7c0849d495b920ea64f0b68158
   devise_for :company_reps
   devise_for :admins
   resources :jobs

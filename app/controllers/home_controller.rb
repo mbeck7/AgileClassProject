@@ -6,9 +6,7 @@ class HomeController < ApplicationController
     search = Job.search do
       fulltext params[:search]
     end
-
-    search_results = search.results
-
+	
   end
 
     def show
