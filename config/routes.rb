@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'employer/index'
-
   get 'home/index'
 
   devise_for :company_reps
