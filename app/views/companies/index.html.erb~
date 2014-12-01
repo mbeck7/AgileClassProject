@@ -36,5 +36,7 @@
 </table>
 
 <br>
+<%= check_box_tag(:job_filled) %>
+<%= label_tag(:job_filled, "Click if the job is filled") %>
 
 <%= link_to 'New Company', new_company_path %>
