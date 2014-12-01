@@ -38,4 +38,16 @@
     <% end %>
   <% end %>
 
+  <h2>Your Unfilled Posts</h2>
+  <% if @unfilled_posts %>
+    <% @unfilled_posts.each do | post | %>
+      <% if post %>
+        <div>
+          <%= link_to "Post: #{post.title}", post %>
+          <br>
+          <%= link_to 'Edit Job', edit_job_path(post) %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

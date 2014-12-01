@@ -10,6 +10,13 @@
     </div>
   <% end %>
 
+<% if company_rep_signed_in? %>
+  <div class="field">
+    <%= f.label :filled %><br>
+    <%= f.check_box :filled %>
+  </div>
+<% end %>
+  
 <% if admin_signed_in? %>
   <div class="field">
     <%= f.label :approved %><br>

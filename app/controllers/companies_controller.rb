@@ -4,23 +4,21 @@ class CompaniesController < ApplicationController
   respond_to :html, :json
 
   def index
-    ordered_companies = Company.order "created_at desc"
-    unapproved_companies = []
-    rejected_companies = []
-    unapproved_companies << Company.find_by(approved: false)
-    rejected_companies << Company.find_by(rejected: true)
-
-    @companies = ordered_companies.flatten - unapproved_companies.flatten - rejected_companies.flatten
+    @companies = Company.order "created_at desc"
     
     searchByCompanyName = Company.search do
       fulltext params[:search]
     end
 
-    searched_companies = searchByCompanyName.results
-    
-    if(searched_companies)
-      @companies = searched_companies.flatten  - unapproved_companies.flatten  - rejected_companies.flatten 
+    if(params[:search])
+      @companies = searchByCompanyName.results
     end
+
+    unapproved_companies = []
+    rejected_companies = []
+    unapproved_companies << Company.find_by(approved: false) if Company.find_by(approved: false) 
+    rejected_companies<< Company.find_by(rejected: true) if Company.find_by(rejected: false)
+    @companies = @companies - unapproved_companies - rejected_companies
   end
 
   def show
