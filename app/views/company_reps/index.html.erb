@@ -1,22 +1,13 @@
-<p class="navbar-text pull-right">
-  <%= link_to 'Home', root_path %>
-  <% if company_rep_signed_in? %>
-         -  |  -    <%= link_to "Company Rep Logout", destroy_company_rep_session_path, method: :delete, :class => 'navbar-link'  %>
-         -  |  -    Logged in as <strong><%= current_company_rep.email %></strong>.
-  <% end %>
-  </p>
-  <br><hr><br>
-
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
 <% if company_rep_signed_in? %>
+  <h2>Register a New Company</h2>
+  <p><%= link_to 'New Job Posing', new_company_path %></p>
 
+  <hr>
+  <h2>Post a Job</h2>
+  <p><%= link_to 'New Job Posing', new_job_path %></p>
+  <br><br>
   <h2>Your Unapproved Companies</h2>
+
   <% if @unapproved_companies %>
     <% @unapproved_companies.each do | company | %>
       <% if company %>
@@ -26,8 +17,9 @@
       <% end %>
     <% end %>
   <% end %>
-
+ <br><br>
   <h2>Your Approved Companies</h2>
+  
   <% if @approved_companies %>
     <% @approved_companies.each do | company | %>
       <% if company %>
@@ -37,6 +29,7 @@
       <% end %>
     <% end %>
   <% end %>
+  <br><br>
 
   <h2>Your Unfilled Posts</h2>
   <% if @unfilled_posts %>

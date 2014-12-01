@@ -7,7 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p class="navbar-text pull-right">
+  <%= link_to 'Home', root_path %>
+  <%= link_to 'Admin Page', admins_path %>
+  <% if admin_signed_in? %>
+         -  |  -    <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+         -  |  -    Logged in as <strong><%= current_admin.email %></strong>.
+  <% end %>
+  <%= link_to 'Company Rep Page', company_reps_path %>
+  <% if company_rep_signed_in? %>
+         -  |  -    <%= link_to "Logout", destroy_company_rep_session_path, method: :delete, :class => 'navbar-link'  %>
+         -  |  -    Logged in as <strong><%= current_company_rep.email %></strong>.
+  <% end %>
+</p>
 
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 <%= yield %>
 
 </body>

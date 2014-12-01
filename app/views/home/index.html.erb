@@ -1,24 +1,4 @@
-<p class="navbar-text pull-right">
-  <%= link_to 'Admin Page', admins_path %>
-  <% if admin_signed_in? %>
-         -  |  -    <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
-         -  |  -    Logged in as <strong><%= current_admin.email %></strong>.
-  <% end %>
-  <%= link_to 'Company Rep Page', company_reps_path %>
-  <% if company_rep_signed_in? %>
-         -  |  -    <%= link_to "Logout", destroy_company_rep_session_path, method: :delete, :class => 'navbar-link'  %>
-         -  |  -    Logged in as <strong><%= current_company_rep.email %></strong>.
-  <% end %>
-</p>
-
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-<h3>User Page</h3>
+<h3>Home</h3>
 <%= form_tag jobs_path, :method => 'get' do %>
   <%= label_tag(:q, "Search for Keywords") %><br>
   <%= text_field_tag :search, params[:searchByKeyword] %>

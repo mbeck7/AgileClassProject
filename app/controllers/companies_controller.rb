@@ -19,6 +19,7 @@ class CompaniesController < ApplicationController
     unapproved_companies << Company.find_by(approved: false) if Company.find_by(approved: false) 
     rejected_companies<< Company.find_by(rejected: true) if Company.find_by(rejected: false)
     @companies = @companies - unapproved_companies - rejected_companies
+    
   end
 
   def show
