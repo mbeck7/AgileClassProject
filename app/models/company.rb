@@ -9,5 +9,9 @@ class Company < ActiveRecord::Base
       Self.order "created_at desc"
     end
 
+    searchable do
+    	text :name
+    end
+
   end
 end
