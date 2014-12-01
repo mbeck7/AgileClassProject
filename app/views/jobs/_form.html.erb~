@@ -17,8 +17,8 @@
   </div>
 <% if company_rep_signed_in? %>
   <div class="field">
-    <%= f.label :filled %><br>
-    <%= f.check_box :filled %>
+    <%= f.label :rejected %><br>
+    <%= f.check_box :rejected %>
   </div>
   <div class="field">
     <%= f.label :rejected %><br>

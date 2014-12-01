@@ -23,7 +23,6 @@
 
 <%= check_box_tag(:job_filled) %>
 <%= label_tag(:job_filled, "Click if the job is filled") %>
-
   <h2>Your Unapproved Companies</h2>
   <% if @unapproved_companies %>
     <% @unapproved_companies.each do | company | %>

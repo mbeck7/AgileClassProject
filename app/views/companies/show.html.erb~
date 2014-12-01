@@ -28,4 +28,5 @@
   <%= @company.company_rep_id %>
 </p>
 
-
+<%= check_box_tag(:job_filled) %>
+<%= label_tag(:job_filled, "Click if the job is filled") %>

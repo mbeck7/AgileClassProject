@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127210455) do
+ActiveRecord::Schema.define(version: 20141201031644) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20141127210455) do
     t.boolean  "approved",             default: false
     t.integer  "company_id"
     t.boolean  "rejected",             default: false
+    t.boolean  "filled",               default: false
   end
 
 end
