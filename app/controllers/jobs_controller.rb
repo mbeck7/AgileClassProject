@@ -5,11 +5,11 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.order "created_at desc"
 
-    search = Job.search do
+    searchByKeyword = Job.search do
       fulltext params[:search]
     end
 
-    search_results = search.results
+    search_results = searchByKeyword.results
 
     if search_results
       unused = @jobs  - search_results
@@ -61,7 +61,7 @@ class JobsController < ApplicationController
     end
 
     def job_params
-      params.require(:job).permit(:company_id, :title, :job_type, :job_location, :job_description, :hours_per_week,
+      params.require(:job).permit(:company_id, :title, :job_type, :job_location, :job_status, :job_description, :hours_per_week,
                                                    :pay_min, :pay_max, :pay_comment, :applicant_experience, :how_to_apply,
                                                    :approved, :rejected)
     end

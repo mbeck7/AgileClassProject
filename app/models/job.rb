@@ -5,6 +5,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :job_type
   validates_presence_of :job_location
+  validates_presence_of :job_status
   validates_presence_of :job_description
   validates_presence_of :hours_per_week
   validates_presence_of :pay_min
@@ -12,7 +13,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :how_to_apply
 
   searchable do
-    text :company_id, :title, :job_type, :job_location, :job_description, :applicant_experience 
+  		text :title, :job_type, :job_location, :job_status, :job_description, :applicant_experience 
   end
 
 end
