@@ -4,10 +4,15 @@ class CompaniesController < ApplicationController
   respond_to :html, :json
 
   def index
-    @companies = Company.approved_job_postings
+    @searchByCompanyName = Company.search do
+      fulltext params[:search]
+    end
+    @companies = @searchByCompanyName.results
+    #@companies = Company.approved_job_postings // This line of code breaks the project if commented out the project works
   end
 
   def show
+    @company = Company.find(params[:id])
     respond_with(@company)
   end
 
