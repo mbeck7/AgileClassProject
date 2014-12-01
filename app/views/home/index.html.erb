@@ -31,6 +31,12 @@
   <%= submit_tag "Search", :name => nil %>
 <% end %><br>
 
+<%= form_tag jobs_path, :method => 'get' do %>
+  <%= check_box_tag(:search_title, "true") %>
+  <%= label_tag(:title_search, "Order by job title") %><br>
+  <%= submit_tag "Order", :name => nil %>
+<% end %><br>
+
 <% @jobs.each do | job | %>
   <% if job.approved == true && job.rejected == false%>
     <div>

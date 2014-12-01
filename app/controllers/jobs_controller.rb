@@ -3,23 +3,26 @@ class JobsController < ApplicationController
   respond_to :html, :json
 
   def index
-    ordered_jobs = Job.order "created_at desc"
-    unapproved_jobs = []
-    rejected_jobs = []
-    unapproved_jobs << Job.find_by(approved: false)
-    rejected_jobs << Job.find_by(rejected: true)
-    
-    @jobs = ordered_jobs.flatten - unapproved_jobs.flatten  - rejected_jobs.flatten 
+     if(params[:search_title] == "true")
+      @jobs = Job.order('title ASC')
+    else
+      @jobs= Job.order "created_at ASC"
+    end
     
     searchByKeyword = Job.search do
       fulltext params[:search]
     end
 
-    search_results = searchByKeyword.results
-
-    if(search_results)
-      @jobs = search_results - unapproved_jobs - rejected_jobs
+    if(params[:search])
+      @jobs = searchByKeyword.results
     end
+
+    unapproved_jobs = []
+    rejected_jobs = []
+    unapproved_jobs << Job.find_by(approved: false) if Job.find_by(approved: false) 
+    rejected_jobs << Job.find_by(rejected: true) if Job.find_by(rejected: false)
+    @jobs = @jobs - unapproved_jobs - rejected_jobs
+
   end
 
   def show
