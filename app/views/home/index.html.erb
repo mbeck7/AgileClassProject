@@ -21,21 +21,16 @@
 <h3>User Page</h3>
 <%= form_tag jobs_path, :method => 'get' do %>
   <%= label_tag(:q, "Search for Keywords") %><br>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :search, params[:searchByKeyword] %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
 
 <%= form_tag jobs_path, :method => 'get' do %>
   <%= label_tag(:q, "Search by Company Name") %><br>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
-
-<%= form_tag jobs_path, :method => 'get' do %>
-  <%= label_tag(:q, "Search by Job Title") %><br>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :search, params[:searchByCompanyName] %>
   <%= submit_tag "Search", :name => nil %>
 <% end %><br>
+
 <% @jobs.each do | job | %>
   <% if job.approved == true && job.rejected == false%>
     <div>
