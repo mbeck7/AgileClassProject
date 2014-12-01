@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20141127210455) do
     t.string   "title"
     t.string   "job_type"
     t.string   "job_location"
-	t.string   "job_status"
+    t.string   "job_status"
     t.text     "job_description"
     t.integer  "hours_per_week"
     t.float    "pay_min"
