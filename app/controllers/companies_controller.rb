@@ -4,11 +4,23 @@ class CompaniesController < ApplicationController
   respond_to :html, :json
 
   def index
-    @searchByCompanyName = Company.search do
+    ordered_companies = Company.order "created_at desc"
+    unapproved_companies = []
+    rejected_companies = []
+    unapproved_companies << Company.find_by(approved: false)
+    rejected_companies << Company.find_by(rejected: true)
+
+    @companies = ordered_companies.flatten - unapproved_companies.flatten - rejected_companies.flatten
+    
+    searchByCompanyName = Company.search do
       fulltext params[:search]
     end
-    @companies = @searchByCompanyName.results
-    #@companies = Company.approved_job_postings // This line of code breaks the project if commented out the project works
+
+    searched_companies = searchByCompanyName.results
+    
+    if(searched_companies)
+      @companies = searched_companies.flatten  - unapproved_companies.flatten  - rejected_companies.flatten 
+    end
   end
 
   def show
