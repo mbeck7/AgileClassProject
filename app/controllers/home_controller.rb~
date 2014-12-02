@@ -2,6 +2,10 @@ class HomeController < ApplicationController
 
   def index
     @jobs = Job.order "created_at desc"
+    
+    search = Job.search do
+      fulltext params[:search]
+    end
 	
   end
 

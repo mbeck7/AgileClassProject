@@ -8,6 +8,14 @@ class JobsController < ApplicationController
     else
       @jobs= Job.order "created_at ASC"
     end
+    
+    searchByKeyword = Job.search do
+      fulltext params[:search]
+    end
+
+    if(params[:search])
+      @jobs = searchByKeyword.results
+    end
 
     unapproved_jobs = []
     rejected_jobs = []

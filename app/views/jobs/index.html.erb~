@@ -1,20 +1,24 @@
-<h3>Home</h3>
 <%= form_tag jobs_path, :method => 'get' do %>
   <%= label_tag(:q, "Search for Keywords") %><br>
   <%= text_field_tag :search, params[:searchByKeyword] %>
   <%= submit_tag "Search", :name => nil %>
-<% end %><br>
+<% end %>
 
-<%= form_tag jobs_path, :method => 'get' do %>
-  <%= check_box_tag(:search_title, "true") %>
-  <%= label_tag(:title_search, "Order by job title") %><br>
-  <%= submit_tag "Order", :name => nil %>
-<% end %><br>
+<%= form_tag companies_path, :method => 'get' do %>
+  <%= label_tag(:q, "Search by Company Name") %><br>
+  <%= text_field_tag :search, params[:searchByCompanyName] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<h1>Jobs</h1>
 
 <% @jobs.each do | job | %>
-  <% if job.approved == true && job.rejected == false%>
+  <% if(job.approved == true && job.rejected == false) %>
     <div>
       <%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}  Job Status: #{job.job_status}", job %>
     </div>
   <% end %>
 <% end %>
+
+
+

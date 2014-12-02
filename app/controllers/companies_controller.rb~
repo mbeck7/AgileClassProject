@@ -5,6 +5,14 @@ class CompaniesController < ApplicationController
 
   def index
     @companies = Company.order "created_at desc"
+    
+    searchByCompanyName = Company.search do
+      fulltext params[:search]
+    end
+
+    if(params[:search])
+      @companies = searchByCompanyName.results
+    end
 
     unapproved_companies = []
     rejected_companies = []

@@ -3,6 +3,12 @@
   <%= label_tag(:q, "Search for Keywords") %><br>
   <%= text_field_tag :search, params[:searchByKeyword] %>
   <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<%= form_tag companies_path, :method => 'get' do %>
+  <%= label_tag(:q, "Search by Company Name") %><br>
+  <%= text_field_tag :search, params[:searchByCompanyName] %>
+  <%= submit_tag "Search", :name => nil %>
 <% end %><br>
 
 <%= form_tag jobs_path, :method => 'get' do %>
