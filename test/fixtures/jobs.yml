@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: "Elixir Developer"
+  job_type: "Entry Level - Salary"
+  job_location: "remote"
+  job_status: "Full-Time"
+  job_description: "Be awesome at all times and do awesome stuff."
+  hours_per_week: 40
+  pay_min: 75000
+  pay_max: 100000
+  pay_comment: "Prove yourself and after three months we'll sweeten the pot."
+  applicant_experience: "Have a github account with some Elixir stuff and you're golden."
+  how_to_apply: "We'll contact you if we're interested. Don't worry, we're magic."
+  company_id: 1
+  approved: false
+  rejected: false
+
+two:
+  title: "Secrecy Specialist"
+  job_type: "Entry Level - Salary"
+  job_location: "remote"
+  job_status: "Full-Time"
+  job_description: "Make sure no one knows what we're up to so we don't have to kill them."
+  hours_per_week: 50
+  pay_min: 200000
+  pay_max: 250000
+  pay_comment: "We do stuff that's bigger than you're worth."
+  applicant_experience: "We can not disclose that information."
+  how_to_apply: "Tape your resume under the mailbox at 4th and Jameson. Someone will be in touch."
+  company_id: 1
+  approved: false
+  rejected: true
+
+three:
+  title: "Action Hero Sidekick"
+  job_type: "Internship - Salary"
+  job_location: "Eau Claire"
+  job_status: "Part-Time"
+  job_description: "With great power come great responsibility. As a sidekick, you can learn both."
+  hours_per_week: 20
+  pay_min: 15.75
+  pay_max: 17.00
+  pay_comment: "The only reward you should need is that satisfaction you receive from the good you do, but we'll give you a little bit."
+  applicant_experience: "Fearlessness in the face of pure evil. Some sort of tragic back-story is preferred. Flexible schedule."
+  how_to_apply: "Just talk to the police chief. He'll pretend he has no idea what you're talking about, but I'll get the message."
+  company_id: 1
+  approved: true
+  rejected: false
