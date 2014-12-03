@@ -1,3 +1,26 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#entry {
+  position: relative;
+  top: -1em;
+}
+
+#location {
+  position: relative;
+  left:7em;
+  top:-5.8em;
+}
+
+#salary {
+  position: relative;
+  left:15.5em;
+  top:-10.5em;
+}
+
+#box {
+  position: relative;
+  top: -10em;
+}
+
+#approved {
+  position: relative;
+  top:-9em;
+}
