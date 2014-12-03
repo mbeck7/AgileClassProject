@@ -12,4 +12,9 @@ class Job < ActiveRecord::Base
   validates_presence_of :applicant_experience
   validates_presence_of :how_to_apply
 
+  #Takes in an array of records and returns only those that are approved.
+  def self.only_approved(jobs)
+    jobs.map{|job| Job.where(id: job, approved: true)}.flatten
+  end
+  
 end
