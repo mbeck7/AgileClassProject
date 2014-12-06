@@ -4,32 +4,16 @@
   <%= text_field_tag :search, params[:searchByKeyword] %>
   <%= submit_tag "Search", :name => nil %>
 <% end %><br>
-<div id=entry>
-<p>Entry Level</p>
-<select name="entry_level" >
-  <option>Full Time</option>
-  <option>Part Time</option>
-  <option>Internship</option>
-  <option>Temporary</option>
-</select> 
-</div>
 
-<div id=location>
-<p>Location</p>
-<select name="location">
-  <option>Local</option>
-  <option>Local/Remote</option>
-  <option>Remote</option>
-</select> 
-</div>
+<%= select_tag(:entry_level, options_for_select([['Full Time', 1], ['Part Time', 2],
+                                                ['Internship', 3], ['Temporary', 4]])) %>
 
-<div id=salary>
-<p>Pay</p>
-<select name="salary">
-  <option>Hourly</option>
-  <option>Salary</option>
-</select> 
-</div>
+<%= select_tag(:location, options_for_select([['Local', 1], ['Local/Remote', 2],
+                                             ['Remote', 3]])) %>
+
+<%= select_tag(:salary, options_for_select([['Hourly', 1], ['Salary', 2]]))%>
+<br>
+<br>
 <div id=box>
 <%= form_tag jobs_path, :method => 'get' do %>
   <%= check_box_tag(:search_title, "true") %>
