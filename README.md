@@ -20,70 +20,14 @@ $ bundle update
 
 $ bundle install
 
-Get rid of solr stuff the git ignore couldn't handle:
-
-$ rm -rf config/sunspot.yml
-
-$ rm -rf solr
-
-Set up solr:
-
-rails g sunspot_rails:install
-
-bundle exec rake sunspot:solr:start
-
-Set up the project and run the server:
+Set up the project and runn the server:
 
 $ rake db:migrate
 
 $ rake db:seed --trace
 
-$ rails s
+$ bin/rake test test/models/job_test.rb
 
-Getting a broken copy up and running if solr is running:
------------------------------------------------------------------------
-
-Get the DB to square one:
-
-$ rake db:migrate VERSION=0
-
-Because ruby gems:
-
-$ bundle update
-
-$ bundle install
-
-Stop solr:
-
-$ bundle exec rake sunspot:solr:stop
-
-Get rid of solr stuff the git ignore couldn't handle:
-
-$ rm -rf config/sunspot.yml
-
-$ rm -rf solr
-
-Set up solr:
-
-$ rails g sunspot_rails:install
-
-$ bundle exec rake sunspot:solr:start
-
-Set up the project and run the server:
-
-$ rake db:migrate
-
-$ rake db:seed --trace
+$ bin/rake test test/models/company_test.rb
 
 $ rails s
-
-Other Helpful Commands
----------------------------------
-
-Check to see if solr is running:
-
-$ ps aux | grep solr
-
-Kill solr if it still is running:
-
-$ sudo kill (ID)
