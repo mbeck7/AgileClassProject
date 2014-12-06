@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :company_reps
   resources :home
 
+  get 'search_results' => 'home#search_results', as: 'search_results'
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
