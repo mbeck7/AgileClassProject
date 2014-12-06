@@ -1,21 +1,51 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  address: MyString
-  state: MyString
-  city: MyString
-  zip_code: MyString
+  name: "AwesomeCo"
+  address: "111 first st"
+  state: "NY"
+  city: "Manhattan"
+  zip_code: "11111"
   company_rep_id: 1
   approved: false
   rejected: false
 
 two:
-  name: MyString
-  address: MyString
-  state: MyString
-  city: MyString
-  zip_code: MyString
-  company_rep_id: 1
+  name: "Apple"
+  address: "222 Second st"
+  state: "CA"
+  city: "Cupertino"
+  zip_code: "22222"
+  company_rep_id: 2
+  approved: false
+  rejected: false
+
+three:
+  name: "Wayne Enter Prizes"
+  address: "333 Third st"
+  state: "CA"
+  city: "Cupertino"
+  zip_code: "33333"
+  company_rep_id: 3
+  approved: false
+  rejected: false
+
+four:
+  name: "Chuck E. Cheese's"
+  address: "444 Fourth st"
+  state: "WI"
+  city: "Eau Claire"
+  zip_code: "44444"
+  company_rep_id: 4
+  approved: false
+  rejected: false
+
+five:
+  name: "Irish Distillers Limited USA Satellite Office"
+  address: "555 Fifth st"
+  state: "MN"
+  city: "Saint Paul"
+  zip_code: "55555"
+  company_rep_id: 4
   approved: false
   rejected: false
