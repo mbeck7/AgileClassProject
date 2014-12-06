@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <h3>Home</h3>
+<<<<<<< HEAD
 <%= form_tag search_results_path, :method => 'get' do %>
   <%= label_tag 'Search by Job Title' %><br>
+=======
+<%= form_tag jobs_path, :method => 'get' do %>
+  <%= label_tag 'Seatch by Job Title' %><br>
+>>>>>>> 0bdce127b1250f097a8a6b01999c763b9df7b6a0
   <%= text_field_tag :search_title %><br>
   
   <br>
 
+<<<<<<< HEAD
 	<%= select_tag(:job_status, options_for_select([['Full-Time', 'Full-Time'], ['Part-Time', 'Part-Time'],
                                                 ['Internship', 'Internship'], ['Temporary', 'Temporary']])) %>
 
@@ -25,6 +31,24 @@
 <br>
 <br>
 
+=======
+	<%= select_tag(:job_status, options_for_select([['Full Time', 1], ['Part Time', 2],
+                                                ['Internship', 3], ['Temporary', 4]])) %>
+
+	<%= select_tag(:job_location, options_for_select([['Local', 1], ['Local/Remote', 2],
+                                             ['Remote', 3]])) %>
+
+  <%= select_tag(:job_type, options_for_select([['Hourly', 1], ['Salary', 2]]))%><br>
+
+  <br>
+  
+  <%= submit_tag "Search", :name => nil %>
+
+<% end %><br>
+
+<br>
+<br>
+>>>>>>> 0bdce127b1250f097a8a6b01999c763b9df7b6a0
 <div id=box>
 <%= form_tag jobs_path, :method => 'get' do %>
   <%= check_box_tag(:search_title, "true") %>
@@ -33,7 +57,8 @@
 <% end %><br>
 </div>
 <% @jobs.each do | job | %>
-  <% if job.approved == true && job.rejected == false%>
+  <% if job.approved == true && job.rejected == false && job.filled == false%>
+
     <div id=approved>
       <%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}  Job Status: #{job.job_status}", job %>
     </div>
