@@ -16,5 +16,15 @@ class Job < ActiveRecord::Base
   def self.only_approved(jobs)
     jobs.map{|job| Job.where(id: job, approved: true)}.flatten
   end
+
+  def self.title_search(title, status, location, type)
+    title = "%" + title + "%"
+    status = "%" + status + "%"
+    location = "%" + location + "%"
+    type = "%" + type + "%"
+    Job.where("title like ? AND job_status like ? AND job_location like ? AND job_type like ?", title, status, location, type)
+  end
+
+  
   
 end
