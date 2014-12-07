@@ -3,3 +3,4 @@
 one:
   email: "homer@admin.com"
   encrypted_password: "homer1234"
+  
