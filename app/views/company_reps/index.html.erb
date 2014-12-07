@@ -3,8 +3,16 @@
   <p><%= link_to 'New Job Posting', new_company_path %></p>
 
   <hr>
-  <h2>Post a Job</h2>
-  <p><%= link_to 'New Job Posting', new_job_path %></p>
+<% if @approved_companies%>
+  <%@approved_companies.each do | company | %>
+    <% if company %>
+      <h2>Post a Job</h2>
+      <p><%= link_to 'New Job Posting', new_job_path %></p>
+      <br><br>
+    <% end %>
+  <% end %>
+<% end %>
+ <br><br>
   <br><br>
   <h2>Your Unapproved Companies</h2>
 
