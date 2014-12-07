@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <h3>Home</h3>
-<%= form_tag jobs_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:searchByKeyword] %><br>
+<%= form_tag search_results_path, :method => 'get' do %>
+  <%= label_tag 'Search by Job Title' %><br>
+  <%= text_field_tag :search_title %><br>
   
   <br>
 
+	<%= select_tag(:job_status, options_for_select([['Full-Time', 'Full-Time'], ['Part-Time', 'Part-Time'],
+                                                ['Internship', 'Internship'], ['Temporary', 'Temporary']])) %>
 
-	<%= select_tag(:entry_level, options_for_select([['Full Time', 1], ['Part Time', 2],
-                                                ['Internship', 3], ['Temporary', 4]])) %>
-
-	<%= select_tag(:location, options_for_select([['Local', 1], ['Local/Remote', 2],
-                                             ['Remote', 3]])) %>
-
-  <%= select_tag(:salary, options_for_select([['Hourly', 1], ['Salary', 2]]))%><br>
+  <%= select_tag(:job_type, options_for_select([['Hourly', 'Hourly'], ['Salary', 'Salary']]))%><br>
+  
   <br>
+
+  <%= label_tag 'Search by Job Location' %><br>
+  <%= text_field_tag :search_location %><br>
+  
+  <br>
+  
   <%= submit_tag "Search", :name => nil %>
 
 <% end %><br>
 
 <br>
 <br>
+
 <div id=box>
 <%= form_tag jobs_path, :method => 'get' do %>
   <%= check_box_tag(:search_title, "true") %>

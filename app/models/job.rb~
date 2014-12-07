@@ -22,7 +22,7 @@ class Job < ActiveRecord::Base
     status = "%" + status + "%"
     location = "%" + location + "%"
     type = "%" + type + "%"
-    Job.where("title like ? AND job_status like ? AND job_location like ? AND job_type like ?", title, status, location, type)
+    Job.where("title like ? OR job_status like ? OR job_location like ? OR job_type like ?", title, status, location, type)
   end
 
   
