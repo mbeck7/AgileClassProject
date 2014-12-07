@@ -11,7 +11,7 @@ class CompanyRepsController < ApplicationController
 
     @unfilled_posts = []
     @approved_companies.each do |company|
-      @unfilled_posts << Job.find_by(company_id:company.id, filled:false) if company
+      @unfilled_posts << Job.find_by(company_id:company.id, filled:false, approved:true) if company
     end
 
     @unfilled_posts.flatten
