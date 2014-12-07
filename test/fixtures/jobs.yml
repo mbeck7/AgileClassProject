@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   title: "Elixir Developer"
   job_type: "Entry Level - Salary"
   job_location: "remote"
@@ -13,10 +14,12 @@ one:
   applicant_experience: "Have a github account with some Elixir stuff and you're golden."
   how_to_apply: "We'll contact you if we're interested. Don't worry, we're magic."
   company_id: 1
-  approved: false
+  approved: true
   rejected: false
+  created_at: 2014-12-07 03:06:11 UTC
 
 two:
+  id: 2
   title: "Secrecy Specialist"
   job_type: "Entry Level - Salary"
   job_location: "remote"
@@ -31,8 +34,10 @@ two:
   company_id: 2
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:06:12 UTC
 
 three:
+  id: 3
   title: "Action Hero Sidekick"
   job_type: "Internship - Salary"
   job_location: "Eau Claire"
@@ -47,8 +52,10 @@ three:
   company_id: 3
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:06:13 UTC
 
 four:
+  id: 4
   title: "Pizza Recipe Specialist"
   job_type: "Entry Level - Salary"
   job_location: "Chippewa Falls"
@@ -63,8 +70,10 @@ four:
   company_id: 4
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:06:14 UTC
 
 five:
+  id: 5
   title: "Jameson Quality Assurance"
   job_type: "Internship - Hourly"
   job_location: "remote"
@@ -79,8 +88,10 @@ five:
   company_id: 5
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:06:15 UTC
 
 six:
+  id: 6
   title: "Nerf Gun Engineer"
   job_type: "Entry Level - Salary"
   job_location: "Lake Halle"
@@ -95,3 +106,4 @@ six:
   company_id: 3
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:06:16 UTC

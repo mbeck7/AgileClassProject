@@ -1,6 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: homer@admin.com
-  password:homer1234
-  password_confirmation: homer1234
+  email: "homer@admin.com"
+  encrypted_password: "homer1234"

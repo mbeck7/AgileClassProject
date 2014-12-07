@@ -1,16 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   name: "AwesomeCo"
   address: "111 first st"
   state: "NY"
   city: "Manhattan"
   zip_code: "11111"
   company_rep_id: 1
-  approved: false
+  approved: true
   rejected: false
+  created_at: 2014-12-07 03:07:11 UTC
 
 two:
+  id: 2
   name: "Apple"
   address: "222 Second st"
   state: "CA"
@@ -19,8 +22,10 @@ two:
   company_rep_id: 2
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:07:12 UTC
 
 three:
+  id: 3
   name: "Wayne Enter Prizes"
   address: "333 Third st"
   state: "CA"
@@ -29,8 +34,10 @@ three:
   company_rep_id: 3
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:07:13 UTC
 
 four:
+  id: 4
   name: "Chuck E. Cheese's"
   address: "444 Fourth st"
   state: "WI"
@@ -39,8 +46,10 @@ four:
   company_rep_id: 4
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:07:14 UTC
 
 five:
+  id: 5
   name: "Irish Distillers Limited USA Satellite Office"
   address: "555 Fifth st"
   state: "MN"
@@ -49,3 +58,4 @@ five:
   company_rep_id: 4
   approved: false
   rejected: false
+  created_at: 2014-12-07 03:07:15 UTC

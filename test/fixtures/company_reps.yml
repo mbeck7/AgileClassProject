@@ -1,21 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: jeffery@company_rep.com
-  password: jeffery1234
-  password_confirmation: jeffery1234
+  email: "jeffery@company_rep.com"
+  encrypted_password: "jeffery1234"
 
 two:
-  email: walter@company_rep.com
-  password: walter1234
-  password_confirmation: walter1234
+  email: "walter@company_rep.com"
+  encrypted_password: "walter1234"
 
 three:
-  email: donny@company_rep.com
-  password: donny1234
-  password_confirmation: donny1234
+  email: "donny@company_rep.com"
+  encrypted_password: "donny1234"
 
 four:
-  email: maude@company_rep.com
-  password: maude1234
-  password_confirmation: maude1234
+  email: "maude@company_rep.com"
+  encrypted_password: "maude1234"
