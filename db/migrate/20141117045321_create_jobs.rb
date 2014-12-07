@@ -5,7 +5,8 @@ class CreateJobs < ActiveRecord::Migration
       t.string :title
       t.string :job_type
       t.string :job_location
-	  t.string :job_status
+      t.string :job_local_remote
+	    t.string :job_status
       t.text :job_description
       t.integer :hours_per_week
       t.float :pay_min
