@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   title: "Elixir Developer"
   job_type: "Entry Level - Salary"
   job_location: "remote"
@@ -13,10 +14,12 @@ one:
   applicant_experience: "Have a github account with some Elixir stuff and you're golden."
   how_to_apply: "We'll contact you if we're interested. Don't worry, we're magic."
   company_id: 1
-  approved: false
+  approved: true
   rejected: false
+  created_at: 2014-12-07 03:06:11 UTC
 
 two:
+  id: 2
   title: "Secrecy Specialist"
   job_type: "Entry Level - Salary"
   job_location: "remote"
@@ -28,11 +31,13 @@ two:
   pay_comment: "We do stuff that's bigger than you're worth."
   applicant_experience: "We can not disclose that information."
   how_to_apply: "Tape your resume under the mailbox at 4th and Jameson. Someone will be in touch."
-  company_id: 1
+  company_id: 2
   approved: false
-  rejected: true
+  rejected: false
+  created_at: 2014-12-07 03:06:12 UTC
 
 three:
+  id: 3
   title: "Action Hero Sidekick"
   job_type: "Internship - Salary"
   job_location: "Eau Claire"
@@ -44,6 +49,62 @@ three:
   pay_comment: "The only reward you should need is that satisfaction you receive from the good you do, but we'll give you a little bit."
   applicant_experience: "Fearlessness in the face of pure evil. Some sort of tragic back-story is preferred. Flexible schedule."
   how_to_apply: "Just talk to the police chief. He'll pretend he has no idea what you're talking about, but I'll get the message."
-  company_id: 1
-  approved: true
+  company_id: 3
+  approved: false
   rejected: false
+  created_at: 2014-12-07 03:06:13 UTC
+
+four:
+  id: 4
+  title: "Pizza Recipe Specialist"
+  job_type: "Entry Level - Salary"
+  job_location: "Chippewa Falls"
+  job_status: "Full-Time"
+  job_description: "Create amazing pizza concoctions for our customers."
+  hours_per_week: 40
+  pay_min: 40000
+  pay_max: 60000
+  pay_comment: "Make us money and you make more."
+  applicant_experience: "Extensive experience with all types of pizza toppings (ie: pepperoni, onions, buffalo wings)."
+  how_to_apply: "Stop by for a slice and drop off your resume."
+  company_id: 4
+  approved: false
+  rejected: false
+  created_at: 2014-12-07 03:06:14 UTC
+
+five:
+  id: 5
+  title: "Jameson Quality Assurance"
+  job_type: "Internship - Hourly"
+  job_location: "remote"
+  job_status: "Part-Time"
+  job_description: "We'll send you a bottle from each batch. You must commit to drinking at least half of the bottle and writing a full report before we ship."
+  hours_per_week: 10
+  pay_min: 15
+  pay_max: 20
+  pay_comment: "You get free Jameson every week as well."
+  applicant_experience: "Good taste buds that have tasted a a fair amount of fine liquor."
+  how_to_apply: "The application is on the underside of all 18 Year Old Limited Reserve and Rarest Vintage Reserve labels."
+  company_id: 5
+  approved: false
+  rejected: false
+  created_at: 2014-12-07 03:06:15 UTC
+
+six:
+  id: 6
+  title: "Nerf Gun Engineer"
+  job_type: "Entry Level - Salary"
+  job_location: "Lake Halle"
+  job_status: "Full-Time"
+  job_description: "The only thing better than excessive violence is excessive violence that won't hurt anyone. We need you to design the tools that our customers can use to make this dream a reality."
+  hours_per_week: 45
+  pay_min: 80000
+  pay_max: 90000
+  pay_comment: "Obviously you will receive a full arsenal at your disposal limited only by the depth of you imagination."
+  applicant_experience: "Must have fairly extensive design and tactical training."
+  how_to_apply: "Send us a sketch or prototype of your dream Nerf weapon. If we like it, we'll give you an offer."
+  company_id: 3
+  approved: false
+  rejected: false
+  created_at: 2014-12-07 03:06:16 UTC
+  

@@ -12,11 +12,6 @@ class Job < ActiveRecord::Base
   validates_presence_of :applicant_experience
   validates_presence_of :how_to_apply
 
-  #Takes in an array of records and returns only those that are approved.
-  def self.only_approved(jobs)
-    jobs.map{|job| Job.where(id: job, approved: true)}.flatten
-  end
-
   def self.title_search(title, status, location, type)
     title = "%" + title + "%"
     status = "%" + status + "%"
@@ -25,6 +20,25 @@ class Job < ActiveRecord::Base
     Job.where("title like ? AND job_status like ? AND job_location like ? AND job_type like ?", title, status, location, type)
   end
 
+  def self.only_approved(jobs = Job.all)
+    approved_jobs = jobs.map{|job| Job.where(id: job.id, approved: true, rejected: false)}.flatten
+    only_from_approved_companies(approved_jobs)
+  end
   
-  
+  def self.only_unapproved(jobs = Job.all)
+    jobs.map{|job| Job.where(id: job.id, approved: false, rejected: false)}.flatten
+  end
+
+  def self.only_from_approved_companies(jobs = Job.all)
+    jobs.map{|job| self.only_if_approved_company_posted(job)}.flatten - [nil]
+  end
+
+  def self.ordered_jobs()
+    Job.all.order "created_at desc"
+  end
+
+  def self.only_if_approved_company_posted(job)
+    job = job && Company.find(job.company_id).approved == true ? job : nil
+  end
+
 end
