@@ -2,10 +2,8 @@ class AdminsController < ApplicationController
    before_action :authenticate_admin!
 
   def index
-    @unapproved_companies = []
-    @unapproved_jobs = []
-    @unapproved_companies << Company.find_by(approved: false, rejected: false)
-    @unapproved_jobs << Job.find_by(approved: false, rejected: false)
+    @unapproved_companies = Company.only_unapproved(Company.ordered_companies)
+    @unapproved_jobs = Job.only_unapproved(Job.ordered_jobs)
   end
 
 end
