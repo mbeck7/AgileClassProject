@@ -23,6 +23,11 @@ class JobsController < ApplicationController
   end
 
   def new
+    @dropdown_fields = []
+      current_company_rep.companies.each do |company|
+        @dropdown_fields << [company.name, company.id]
+      end
+
     @job = Job.new
   end
 
@@ -41,6 +46,16 @@ class JobsController < ApplicationController
   end
 
   def edit
+    if company_rep_signed_in?
+      @dropdown_fields = []
+      current_company_rep.companies.each do |company|
+        @dropdown_fields << [company.name, company.id]
+      end
+
+    else
+      job = Job.find(params[:id])
+      @dropdown_fields = [ [job.company.name, job.company.id] ]
+    end
   end
 
   def update

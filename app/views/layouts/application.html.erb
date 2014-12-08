@@ -9,21 +9,23 @@
 <body>
 <p class="navbar-text pull-right">
   <%= link_to 'Home', root_path %>
-  -    <%= link_to 'Admin Page', admins_path %>
-  -    <%= link_to 'Company Rep Page', company_reps_path %>
-  -    <%= link_to "Register a Company", new_company_rep_registration_path, :class => 'navbar-link'  %>
-  <% if admin_signed_in? %>
-         -    <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
-         <br>
-         -    Logged in as <strong><%= current_admin.email %></strong>.
+    <% if admin_signed_in? %>
+           -    <%= link_to 'Admin Page', admins_path %>
+           -    <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+           <br>
+           -    Logged in as <strong><%= current_admin.email %></strong>.
+
+    <% else if company_rep_signed_in? %>
+           -    <%= link_to 'Company Rep Page', company_reps_path %>
+           -    <%= link_to "Logout", destroy_company_rep_session_path, method: :delete, :class => 'navbar-link'  %>
+           <br>
+           -    Logged in as <strong><%= current_company_rep.email %></strong>.
+    <% else %>
+           -    <%= link_to 'Admin Page', admins_path %>
+           -    <%= link_to 'Company Rep Page', company_reps_path %>
+           <br>
+    <% end %>
   <% end %>
-  
-  <% if company_rep_signed_in? %>
-         -    <%= link_to "Logout", destroy_company_rep_session_path, method: :delete, :class => 'navbar-link'  %>
-         <br>
-         -    Logged in as <strong><%= current_company_rep.email %></strong>.
-  <% end %>
-  
 </p>
 
 <% if notice %>

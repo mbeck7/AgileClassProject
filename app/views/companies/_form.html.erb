@@ -40,10 +40,16 @@
     <%= f.label :zip_code %><br>
     <%= f.text_field :zip_code %>
   </div>
+
+<% if company_rep_signed_in? %>
   <div class="field">
     <%= f.label :company_rep_id %><br>
-    <%= f.number_field :company_rep_id %>
-  </div>
+    <%= f.select :company_rep_id, [ [current_company_rep.email, current_company_rep.id] ]%>
+<%else%>
+    <%= f.label :company_rep_id %><br>
+    <%= f.select :company_rep_id, [ [Company.find(params[:id]) .company_rep.email, Company.find(params[:id]) .company_rep.id] ]%>
+<% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

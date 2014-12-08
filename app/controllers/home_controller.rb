@@ -2,7 +2,6 @@ class HomeController < ApplicationController
 
   def index
     @jobs = Job.only_approved(Job.ordered_jobs)
-	
   end
 
     def show
