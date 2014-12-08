@@ -16,7 +16,7 @@ class HomeController < ApplicationController
   def search_results #Displays search results
     title = params[:search_title]
     status = params[:job_status]
-    location = params[:search_location]
+    location = params[:job_location]
     type = params[:job_type]
     @found_jobs = Job.title_search(title, status, location, type)
   end
