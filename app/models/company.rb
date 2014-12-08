@@ -7,7 +7,7 @@ class Company < ActiveRecord::Base
     end
     
     def self.only_unapproved(companies = Company.all)
-      companies.map{|company| Company.where(id: company, approved: false)}.flatten
+      companies.map{|company| Company.where(id: company, approved: false, rejected: false)}.flatten
     end
 
     def self.ordered_companies
