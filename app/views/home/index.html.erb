@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <h3>Home</h3>
 <%= form_tag search_results_path, :method => 'get' do %>
-  <%= label_tag 'Search by Job Title' %><br>
+
+  <%= label_tag 'Search Job Title' %><br>
   <%= text_field_tag :search_title %><br>
   
   <br>
@@ -9,12 +10,10 @@
 	<%= select_tag(:job_status, options_for_select([['Full-Time', 'Full-Time'], ['Part-Time', 'Part-Time'],
                                                 ['Internship', 'Internship'], ['Temporary', 'Temporary']])) %>
 
-  <%= select_tag(:job_type, options_for_select([['Hourly', 'Hourly'], ['Salary', 'Salary']]))%><br>
-  
-  <br>
+  <%= select_tag(:job_local_remote, options_for_select([['Local', 'Local'], ['Remote', 'Remote'],
+                                                ['Local/Remote', 'Local/Remote']])) %>
 
-  <%= label_tag 'Search by Job Location' %><br>
-  <%= text_field_tag :search_location %><br>
+  <%= select_tag(:job_type, options_for_select([['Hourly', 'Hourly'], ['Salary', 'Salary']]))%><br>
   
   <br>
   
@@ -36,7 +35,7 @@
   <% if job.approved == true && job.rejected == false && job.filled == false%>
 
     <div id=approved>
-      <%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}  Job Status: #{job.job_status}", job %>
+      <%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}  Job Status: #{job.job_status}  -  Job Local/Remote: #{job.job_local_remote}", job %>
     </div>
   <% end %>
 <% end %>
