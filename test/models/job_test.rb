@@ -2,6 +2,10 @@ require 'test_helper'
 
 class JobTest < ActiveSupport::TestCase
 
+  test "Search from model jobs have the right number of params and is populated" do
+    assert Job.title_search("Elixir Developer", "Full-Time", "remote", "Entry Level - Salary").any?
+  end
+
   test "only_approved does not allow jobs that are unapproved" do
     job = Job.find(1)
     approved_jobs = Job.only_approved
