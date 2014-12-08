@@ -12,12 +12,13 @@ class Job < ActiveRecord::Base
   validates_presence_of :applicant_experience
   validates_presence_of :how_to_apply
 
-  def self.title_search(title, status, location, type)
+  def self.title_search(title, local_remote, status, type)
     title = "%" + title + "%"
+    local_remote = "%" + local_remote + "%"
     status = "%" + status + "%"
-    location = "%" + location + "%"
     type = "%" + type + "%"
-    Job.where("title like ? AND job_status like ? AND job_location like ? AND job_type like ?", title, status, location, type)
+    Job.where("title like ? AND job_local_remote like ? AND job_status like ? AND job_type like ?", 
+    	title, local_remote, status, type)
   end
 
   def self.only_approved(jobs = Job.all)
