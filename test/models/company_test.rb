@@ -14,6 +14,13 @@ class CompanyTest < ActiveSupport::TestCase
     assert !unapproved_companies.include?(company) && unapproved_companies.count == 4
   end
 
+  test "only_unapproved does not allow rejected companies" do
+    company = Company.find(2)
+    company.update(rejected: true)
+    unapproved_companies = Company.only_unapproved
+    assert !unapproved_companies.include?(company) && unapproved_companies.count == 3
+  end
+
   test "ordered_companies sorts companies by the most recently created" do
     assert Company.ordered_companies.first.name == "Irish Distillers Limited USA Satellite Office"
     assert Company.ordered_companies.last.name == "AwesomeCo"

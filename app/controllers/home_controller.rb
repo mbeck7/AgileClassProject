@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @jobs = Job.order "created_at desc"
+    @jobs = Job.only_approved(Job.ordered_jobs)
 	
   end
 
