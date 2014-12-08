@@ -6,6 +6,6 @@
 
 <% @found_jobs.each do | job | %>
 	<% if job.approved == true && job.rejected == false%>
-		<%= link_to "Job Title: #{job.title}  -  Job Type: #{job.job_type}  Job Status: #{job.job_status}  -  Job Local/Remote: #{job.job_local_remote}", job %><br>
+		<%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}  Job Status: #{job.job_status}  -  Job Local/Remote: #{job.job_local_remote}", job %><br>
 	<% end %>
 <% end %>
