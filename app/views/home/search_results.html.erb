@@ -1,11 +1,11 @@
 <h1>Search Results</h1>
 
 <% if @found_jobs.empty? %>
-	<p>No results found.</p>
+	<p>No Job Postings are found.</p>
 <% end %>
 
 <% @found_jobs.each do | job | %>
 	<% if job.approved == true && job.rejected == false%>
-		<%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}  Job Status: #{job.job_status}", job %><br>
+		<%= link_to "Company: #{Company.find(job.company_id).name}  Job Title: #{job.title}  -  Job Type: #{job.job_type}  Job Status: #{job.job_status}  Job Location #{job.job_location}", job %><br>
 	<% end %>
 <% end %>

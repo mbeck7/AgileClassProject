@@ -13,13 +13,10 @@
 
   <% if admin_signed_in? %>
     <div class="field">
-      <%= f.label :approved %><br>
-      <%= f.check_box :approved %>
-    </div>
-
-    <div class="field">
-      <%= f.label :rejected %><br>
-      <%= f.check_box :rejected %>
+      <%= f.label :approved, "Approved", :value => "true"  %><br>
+      <%= f.radio_button :approved, true %><br>
+      <%= f.label :approved, "Rejected", :value => "false" %><br>
+      <%= f.radio_button :approved, false, :checked => true %>
     </div>
   <%end%>
 
