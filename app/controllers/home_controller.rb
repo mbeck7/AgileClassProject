@@ -15,9 +15,9 @@ class HomeController < ApplicationController
  
   def search_results #Displays search results
     title = params[:search_title]
+    local_remote = params[:job_local_remote]
     status = params[:job_status]
-    location = params[:search_location]
     type = params[:job_type]
-    @found_jobs = Job.title_search(title, status, location, type)
+    @found_jobs = Job.title_search(title, local_remote, status, type)
   end
 end
